@@ -43,5 +43,5 @@ Si deseas contribuir a este proyecto, por favor sigue estos pasos:
 
 ## Contacto
 
-Para cualquier consulta o sugerencia, puedes contactarme en [tu correo electrónico].
+Para cualquier consulta o sugerencia, puedes contactarme.
 
