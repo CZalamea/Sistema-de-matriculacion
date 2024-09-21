@@ -49,6 +49,7 @@ GET /api/users - Obtiene todos los usuarios.
 POST /api/users - Crea un nuevo usuario.
 POST /api/auth/login - Inicia sesión con un usuario existente.
 POST /api/auth/register - Registra un nuevo usuario.
+
 🤝 Contribuir
 ¡Las contribuciones son bienvenidas! Para contribuir, sigue estos pasos:
 
@@ -56,6 +57,7 @@ Haz un fork del proyecto.
 Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
 Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
 Envía un pull request.
+
 📄 Licencia
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
