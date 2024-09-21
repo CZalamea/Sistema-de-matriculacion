@@ -8,9 +8,13 @@
 <body>
 
 <div class="container-fluid text-center">
-    <div><h2>Manage Users</h2></div>
+    <div><h2>Administrador de Users</h2></div>
     <div class="m-2">
-        <a class="h3" th:href="@{/users/new}">Add nuevo usuario</a>
+        <a class="h3" th:href="@{/users/new}">Agregar nuevo usuario</a>
+    </div>
+
+    <div th:if="${mensaje}" class="alert alert-success text-center">
+        [[${mensaje}]]
     </div>
     <div>
         <table class="table table-bordered">
@@ -20,6 +24,7 @@
                 <th>EMAIL</th>
                 <th>FIRST NAME</th>
                 <th>LAST NAME</th>
+                <th>Enabled</th>
                 <th></th>
             </tr>
             </thead>
@@ -30,6 +35,7 @@
                     <td>[[${user.email}]]</td>
                     <td>[[${user.firstName}]]</td>
                     <td>[[${user.lastName}]]</td>
+                    <td>[[${user.enabled}]]</td>
                     <td>
                         <a class="h4 mr-3" th:href= "@{'/users/edit/' + ${user.id}}">Edit</a>
                         <a class="h4 mr-3" th:href= "@{'/users/delete/' + ${user.id}}">Delete</a>

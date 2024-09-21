@@ -4,7 +4,8 @@ package com.raccoon.webapp.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -23,6 +24,40 @@ public class UserController {
     @GetMapping("/users/new")
     public String crearNuevoUsuario(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("pageTitle", "Nuevo usuario");
         return "user_form";
+    }
+
+    @PostMapping("/users/save")
+    public String guardarNuevoUsuario(User user, RedirectAttributes redirectAttributes) {
+        userService.save(user);
+        redirectAttributes.addFlashAttribute("mensaje", "Usuario guardado exitosamente");
+        return "redirect:/users";
+    }
+
+    @GetMapping("/users/edit/{id}")
+    public String mostrarEditarUsuario(@PathVariable("id") int id, Model model, RedirectAttributes redirectAttributes) {
+        try{
+            User user = userService.getById(id);
+            model.addAttribute("user", user);
+            model.addAttribute("pageTitle", "Editar usuario (ID: " + id + ")");
+            return "user_form";
+        }
+        catch (UserNotFoundException e){
+            redirectAttributes.addFlashAttribute("mensaje", e.getMessage());
+        }
+        return "redirect:/users";
+    }
+
+    @GetMapping("/users/delete/{id}")
+    public String eliminarUsuario(@PathVariable("id") int id, RedirectAttributes redirectAttributes) {
+        try{
+            userService.delete(id);
+            redirectAttributes.addFlashAttribute("mensaje", "Usuario eliminado " +id + " exitosamente");
+        }catch (UserNotFoundException e){
+            redirectAttributes.addFlashAttribute("mensaje", e.getMessage());
+
+        }
+        return "redirect:/users";
     }
 }
