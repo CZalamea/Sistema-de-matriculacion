@@ -1,11 +1,14 @@
 
 🌐 WebApp
+
 Este es el repositorio para el proyecto WebApp.
 
 📄 Descripción
+
 WebApp es una aplicación web diseñada para el manejo de usuarios, muy sencilla. Este proyecto utiliza Java, JPA, MySQL y Thymeleaf y está destinado a una pequeña práctica en Java y además descubrir Thymeleaf.
 
 🛠️ Instalación
+
 Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 
 Clona el repositorio:
