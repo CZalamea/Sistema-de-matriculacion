@@ -1,70 +1,61 @@
-🌐 WebApp
-Este es el repositorio para el proyecto WebApp, una aplicación sencilla para la gestión de usuarios.
+# 🌐 WebApp API
 
-📄 Descripción
-WebApp es una aplicación web diseñada para gestionar usuarios, pensada como una pequeña práctica de Java y una introducción a Thymeleaf. El proyecto utiliza Java, JPA (Java Persistence API), MySQL, y Thymeleaf como motor de plantillas para la interfaz.
+¡Bienvenido a la API de WebApp! 🚀 Esta API te permite gestionar usuarios y autenticación de manera eficiente. 🔒
 
-🛠️ Instalación
-Sigue estos pasos para clonar y ejecutar este proyecto localmente:
+## 📋 Tabla de Contenidos
 
-Clona el repositorio:
-'git clone https://github.com/CZalamea/WebApp.git'
+- Instalación
+- Uso
+- Endpoints
+- Contribuir
+- Licencia
+
+## 🛠️ Instalación
+
+Para instalar y ejecutar esta API localmente, sigue estos pasos:
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/CZalamea/WebApp.git
+
 Navega al directorio del proyecto:
-
-bash
-Copiar código
 cd WebApp
-Configura el proyecto en tu IDE (IntelliJ, Eclipse, etc.), asegurándote de que tienes configurado Java 17 o superior y Maven para gestionar las dependencias.
 
-Configura la base de datos en el archivo application.properties:
+Instala las dependencias:
+npm install
 
-properties
-Copiar código
-spring.datasource.url=jdbc:mysql://localhost:3306/webapp
-spring.datasource.username=tu_usuario
-spring.datasource.password=tu_contraseña
-spring.jpa.hibernate.ddl-auto=update
-Inicia la aplicación:
-
-bash
-Copiar código
-mvn spring-boot:run
-La aplicación estará disponible en http://localhost:8080.
+Inicia el servidor:
+npm start
 
 🚀 Uso
-Puedes utilizar esta aplicación para explorar funcionalidades básicas de Spring Boot, Thymeleaf y la interacción con bases de datos mediante JPA. Es ideal para añadir más funcionalidades y practicar con Spring Framework.
+Para usar la API, envía solicitudes HTTP a los endpoints disponibles. Aquí hay algunos ejemplos:
 
-📚 Funcionalidades Incluidas
-Crear usuarios: Agrega nuevos usuarios a la base de datos.
-Listar usuarios: Muestra todos los usuarios registrados.
-Editar usuarios: Modifica la información de un usuario existente.
-Eliminar usuarios: Elimina usuarios de la base de datos.
-Web Interface
-Accede a las siguientes rutas para interactuar con la aplicación:
+Obtener todos los usuarios
+GET /api/users
 
-Listar todos los usuarios: /users
-Crear nuevo usuario: /users/new
-Editar usuario existente: /users/edit/{id}
-Eliminar usuario: /users/delete/{id}
-🤝 Contribución
-Si deseas contribuir a este proyecto, sigue estos pasos:
+Crear un nuevo usuario
+POST /api/users
+Content-Type: application/json
 
-Haz un fork del repositorio.
-Crea una nueva rama para tu funcionalidad:
-bash
-Copiar código
-git checkout -b feature/nueva-funcionalidad
-Realiza tus cambios y crea un commit:
-bash
-Copiar código
-git commit -m "Añadir nueva funcionalidad"
-Sube tus cambios:
-bash
-Copiar código
-git push origin feature/nueva-funcionalidad
-Abre un Pull Request en GitHub.
-📬 Contacto
-Si tienes alguna pregunta, sugerencia o consulta, no dudes en contactarme a través de mi perfil de GitHub o mediante correo electrónico.
+{
+  "name": "Juan Pérez",
+  "email": "juan.perez@example.com",
+  "password": "supersecreto"
+}
 
+📚 Endpoints
+GET /api/users - Obtiene todos los usuarios.
+POST /api/users - Crea un nuevo usuario.
+POST /api/auth/login - Inicia sesión con un usuario existente.
+POST /api/auth/register - Registra un nuevo usuario.
+🤝 Contribuir
+¡Las contribuciones son bienvenidas! Para contribuir, sigue estos pasos:
 
+Haz un fork del proyecto.
+Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
+Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
+Envía un pull request.
+📄 Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
+¡Gracias por usar WebApp API! Si tienes alguna pregunta, no dudes en abrir un issue. 😊
