@@ -8,10 +8,7 @@ WebApp es una aplicación web diseñada para gestionar usuarios, pensada como un
 Sigue estos pasos para clonar y ejecutar este proyecto localmente:
 
 Clona el repositorio:
-
-bash
-Copiar código
-git clone https://github.com/CZalamea/WebApp.git
+'git clone https://github.com/CZalamea/WebApp.git'
 Navega al directorio del proyecto:
 
 bash
