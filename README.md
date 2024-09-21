@@ -18,13 +18,14 @@ Para instalar y ejecutar esta API localmente, sigue estos pasos:
    ```bash
    git clone https://github.com/CZalamea/WebApp.git
 
-Navega al directorio del proyecto:
+2.Navega al directorio del proyecto:
+
 cd WebApp
 
-Instala las dependencias:
+3.Instala las dependencias:
 npm install
 
-Inicia el servidor:
+4.Inicia el servidor:
 npm start
 
 🚀 Uso
