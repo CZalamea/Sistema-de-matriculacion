@@ -6,10 +6,20 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+
+/*
+esta clase meneja la logica del negocio
+ */
+
+
 @Service
 public class UserService {
     @Autowired private UserRepository repo;
 
+
+    public List<User> findEnabledUsers() {
+        return  repo.findByEnabledTrue();
+    }
     public List<User> findAll() {
         return (List<User>) repo.findAll();
     }
