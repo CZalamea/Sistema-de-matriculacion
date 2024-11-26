@@ -1,4 +1,4 @@
-package com.raccoon.webapp.user;
+package com.raccoon.webapp.estudiantes;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,8 +9,8 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "estudiantes")
+public class Estudiantes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -25,6 +25,12 @@ public class User {
 
     @Column(length = 45, nullable = false, name = "last_name")
     private String lastName;
+
+    @Column(length = 45, nullable = false, name = "curso")
+    private String curso;
+
+    @Column(length = 45, nullable = false, name = "matricula")
+    private String matricula;
 
     private boolean enabled;
 

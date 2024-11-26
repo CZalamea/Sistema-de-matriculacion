@@ -32,10 +32,10 @@ npm start
 Para usar la API, envía solicitudes HTTP a los endpoints disponibles. Aquí hay algunos ejemplos:
 
 Obtener todos los usuarios
-GET /api/users
+GET /api/estudiantes
 
 Crear un nuevo usuario
-POST /api/users
+POST /api/estudiantes
 Content-Type: application/json
 
 {
@@ -45,8 +45,8 @@ Content-Type: application/json
 }
 
 📚 Endpoints
-GET /api/users - Obtiene todos los usuarios.
-POST /api/users - Crea un nuevo usuario.
+GET /api/estudiantes - Obtiene todos los usuarios.
+POST /api/estudiantes - Crea un nuevo usuario.
 POST /api/auth/login - Inicia sesión con un usuario existente.
 POST /api/auth/register - Registra un nuevo usuario.
 
