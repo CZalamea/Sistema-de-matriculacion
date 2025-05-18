@@ -36,8 +36,8 @@
         <tr>
           <td>[[${estudiantes.id}]]</td>
           <td>[[${estudiantes.email}]]</td>
-          <td>[[${estudiantes.firstName}]]</td>
-          <td>[[${estudiantes.lastName}]]</td>
+          <td>[[${estudiantes.nombres}]]</td>
+          <td>[[${estudiantes.apellidos}]]</td>
           <td>[[${estudiantes.curso}]]</td>
           <td>[[${estudiantes.matricula}]]</td>
           <td>[[${estudiantes.enabled}]]</td>
@@ -50,8 +50,16 @@
 
       </tbody>
     </table>
+    <button type="button" class="btn btn-secondary m-2" onclick="paginaPrincipal()">Pagina Princiapl</button>
   </div>
 </div>
+
+<script type="text/javascript">
+  function paginaPrincipal() {
+    window.location = '/';
+  }
+
+</script>
 
 </body>
 </html>

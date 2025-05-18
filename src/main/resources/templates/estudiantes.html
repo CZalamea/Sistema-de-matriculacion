@@ -17,14 +17,21 @@
     <div th:if="${message}" class="alert alert-success text-center">
         [[${message}]]
     </div>
+
+    <!-- Formulario de búsqueda -->
+    <form method="get" action="/estudiantes/all_users" class="d-flex mb-4">
+        <input type="text" name="search" class="form-control me-2" placeholder="Buscar por nombre, apellido o correo">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
     <div>
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
                 <th>ID</th>
                 <th>EMAIL</th>
-                <th>FIRST NAME</th>
-                <th>LAST NAME</th>
+                <th>NOMBRES</th>
+                <th>APELLIDOS</th>
                 <th>CURSO</th>
                 <th>MATRICULA</th>
                 <th>Enabled</th>
@@ -36,8 +43,8 @@
                 <tr>
                     <td>[[${estudiantes.id}]]</td>
                     <td>[[${estudiantes.email}]]</td>
-                    <td>[[${estudiantes.firstName}]]</td>
-                    <td>[[${estudiantes.lastName}]]</td>
+                    <td>[[${estudiantes.nombres}]]</td>
+                    <td>[[${estudiantes.apellidos}]]</td>
                     <td>[[${estudiantes.curso}]]</td>
                     <td>[[${estudiantes.matricula}]]</td>
                     <td>[[${estudiantes.enabled}]]</td>
@@ -47,11 +54,20 @@
                     </td>
                 </tr>
             </th:block>
-
             </tbody>
         </table>
+        <button type="button" class="btn btn-secondary m-2" onclick="paginaPrincipal()">Pagina Princiapl</button>
     </div>
 </div>
+
+<script type="text/javascript">
+    function paginaPrincipal() {
+        window.location = '/';
+    }
+
+</script>
+
+
 
 </body>
 </html>

@@ -2,7 +2,7 @@ package com.raccoon.webapp;
 
 
 import com.raccoon.webapp.estudiantes.Estudiantes;
-import com.raccoon.webapp.estudiantes.EstudianterRepository;
+import com.raccoon.webapp.estudiantes.EstudianteRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,17 +15,16 @@ import java.util.Optional;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Rollback(false)
 public class EstudiantesRepositoryTest {
-    @Autowired private EstudianterRepository repo;
+    @Autowired private EstudianteRepository repo;
 
     @Test
     public void testAddUser() {
         Estudiantes estudiantes = new Estudiantes();
         estudiantes.setEmail("cesar.z@gmail.com");
         estudiantes.setPassword("123456");
-        estudiantes.setFirstName("Cesar");
-        estudiantes.setLastName("Zalamea");
+        estudiantes.setNombres("Cesar");
+        estudiantes.setApellidos("Zalamea");
 
         Estudiantes saverEstudiantes = repo.save(estudiantes);
 

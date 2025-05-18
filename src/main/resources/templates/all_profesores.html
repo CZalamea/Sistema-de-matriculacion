@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https//www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Users</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div class="container-fluid text-center">
+  <div><h2>Administrador de Users</h2></div>
+  <div class="m-2">
+    <a class="btn btn-primary bt-lg active" role="button" aria-pressed="true" th:href="@{/profesores/new}">AGREGAR NUEVO USUARIO</a>
+    <a class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" th:href="@{/profesores}">REGRESAR</a>
+  </div>
+
+  <div th:if="${mensaje}" class="alert alert-success text-center">
+    [[${mensaje}]]
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>EMAIL</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>CURSO</th>
+        <th>MATRICULA</th>
+        <th>Enabled</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="profesores : ${listaProfesores}">
+        <tr>
+          <td>[[${profesores.id}]]</td>
+          <td>[[${profesores.email}]]</td>
+          <td>[[${profesores.nombres}]]</td>
+          <td>[[${profesores.apellidos}]]</td>
+          <td>[[${profesores.curso}]]</td>
+          <td>[[${profesores.matricula}]]</td>
+          <td>[[${profesores.enabled}]]</td>
+          <td>
+            <a type="button" class="btn btn-info" th:href= "@{'/profesores/all_users/edit/' + ${profesores.id}}">Edit</a>
+            <a type="button" class="btn btn-danger" th:href= "@{'/profesores/all_users/delete/' + ${profesores.id}}">Delete</a>
+          </td>
+        </tr>
+      </th:block>
+
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-secondary m-2" onclick="paginaPrincipal()">Pagina Princiapl</button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function paginaPrincipal() {
+    window.location = '/';
+  }
+
+</script>
+
+</body>
+</html>

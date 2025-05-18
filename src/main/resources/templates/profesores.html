@@ -10,13 +10,20 @@
 <div class="container-fluid text-center">
     <div><h2>Administrador de Users(SOLO ACTIVOS)</h2></div>
     <div class="m-2">
-        <a class="btn btn-primary bt-lg active" role="button" aria-pressed="true" th:href="@{/estudiantes/new}">AGREGAR NUEVO USUARIO</a>
-        <a class="btn btn-secondary btn-lg active" role="button" aria-pressed="mixed" th:href="@{/estudiantes/all_users}">VER TODOS LOS USUARIOS</a>
+        <a class="btn btn-primary bt-lg active" role="button" aria-pressed="true" th:href="@{/profesores/new}">AGREGAR NUEVO USUARIO</a>
+        <a class="btn btn-secondary btn-lg active" role="button" aria-pressed="mixed" th:href="@{/profesores/all_users}">VER TODOS LOS USUARIOS</a>
     </div>
 
     <div th:if="${message}" class="alert alert-success text-center">
         [[${message}]]
     </div>
+
+    <!-- Formulario de búsqueda -->
+    <form method="get" action="/profesores/all_users" class="d-flex mb-4">
+        <input type="text" name="search" class="form-control me-2" placeholder="Buscar por nombre, apellido o correo">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
     <div>
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -32,26 +39,34 @@
             </tr>
             </thead>
             <tbody>
-            <th:block th:each="estudiantes : ${listaEstudiantes}">
+            <th:block th:each="profesores : ${listaProfesores}">
                 <tr>
-                    <td>[[${estudiantes.id}]]</td>
-                    <td>[[${estudiantes.email}]]</td>
-                    <td>[[${estudiantes.firstName}]]</td>
-                    <td>[[${estudiantes.lastName}]]</td>
-                    <td>[[${estudiantes.curso}]]</td>
-                    <td>[[${estudiantes.matricula}]]</td>
-                    <td>[[${estudiantes.enabled}]]</td>
+                    <td>[[${profesores.id}]]</td>
+                    <td>[[${profesores.email}]]</td>
+                    <td>[[${profesores.nombres}]]</td>
+                    <td>[[${profesores.apellidos}]]</td>
+                    <td>[[${profesores.curso}]]</td>
+                    <td>[[${profesores.matricula}]]</td>
+                    <td>[[${profesores.enabled}]]</td>
                     <td>
-                        <a type="button" class="btn btn-info" th:href= "@{'/estudiantes/edit/' + ${estudiantes.id}}">Edit</a>
-                        <a type="button" class="btn btn-danger" th:href= "@{'/estudiantes/delete/' + ${estudiantes.id}}">Delete</a>
+                        <a type="button" class="btn btn-info" th:href= "@{'/profesores/edit/' + ${profesores.id}}">Edit</a>
+                        <a type="button" class="btn btn-danger" th:href= "@{'/profesores/delete/' + ${profesores.id}}">Delete</a>
                     </td>
                 </tr>
             </th:block>
 
             </tbody>
         </table>
+        <button type="button" class="btn btn-secondary m-2" onclick="paginaPrincipal()">Pagina Princiapl</button>
     </div>
 </div>
+
+<script type="text/javascript">
+    function paginaPrincipal() {
+        window.location = '/';
+    }
+
+</script>
 
 </body>
 </html>
