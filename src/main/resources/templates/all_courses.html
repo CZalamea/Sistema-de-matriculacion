@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Courses</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div class="container-fluid text-center">
+  <div><h2>Administrador de Courses</h2></div>
+  <div class="m-2">
+    <a class="btn btn-primary bt-lg active" role="button" aria-pressed="true" th:href="@{/courses/new}">AGREGAR NUEVO CURSO</a>
+    <a class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" th:href="@{/}">REGRESAR</a>
+  </div>
+
+  <div th:if="${message}" class="alert alert-success text-center">
+    [[${message}]]
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>DESCRIPCION</th>
+        <th>CREDITOS</th>
+        <th>Enabled</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="course : ${courseList}">
+        <tr>
+          <td>[[${course.id}]]</td>
+          <td>[[${course.nombre}]]</td>
+          <td>[[${course.descripcion}]]</td>
+          <td>[[${course.creditos}]]</td>
+          <td>[[${course.enabled}]]</td>
+          <td>
+            <a type="button" class="btn btn-info" th:href="@{'/courses/edit/' + ${course.id}}">Edit</a>
+            <a type="button" class="btn btn-danger" th:href="@{'/courses/delete/' + ${course.id}}">Delete</a>
+          </td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
